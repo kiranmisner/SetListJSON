@@ -36,12 +36,11 @@
         	document.getElementById("serialized").innerHTML = "";
         	for (var i = 0; i < songs_array.length; i++) {
         		document.getElementById("serialized").innerHTML += "<h4>" + 
-        		songs_array[i].song  + "</h4>" + "Artist: " + songs_array[i].artist +
-        		"<br>" + "Genre: " + songs_array[i].genre + "<br>" + "Year: " +
-			songs_array[i].year + "<br> <hr>";
+        		songs_array[i].song  + "</h4>" + songs_array[i].artist +
+        		"<br>" + songs_array[i].genre + "<br>" + songs_array[i].year +
+        		"<br> <hr>";
         	}
         }
-
 
         function filterMusic() {
         	if (document.getElementById("genreselect").value == "all") {
@@ -50,17 +49,16 @@
         		document.getElementById("serialized").innerHTML = "";
         		for (var i = 0; i < songs_array.length; i++){
         			var genre = document.getElementById("genreselect").value;
-        			if (genre == songs_array[i].genre) {
+        			if (genre == songs_array[i].genre[0] || genre == songs_array[i].genre[1]) {
         				document.getElementById("serialized").innerHTML += "<h4>" + 
-        				songs_array[i].song  + "</h4>" + "Artist: " + songs_array[i].artist +
-        				"<br>" + "Genre: " + songs_array[i].genre + "<br>" + "Year: " +
-					songs_array[i].year + "<br> <hr>";
+        				songs_array[i].song  + "</h4>" + songs_array[i].artist +
+        				"<br>" + songs_array[i].genre + "<br>" + songs_array[i].year +
+        				"<br> <hr>";
         			}
         		}
         	}
 
         }
-
     </script>
 </body>
 </html>
